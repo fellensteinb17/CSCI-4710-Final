@@ -1,7 +1,4 @@
 ﻿{% extends "template.html" %}
-{% block head %}
-    <link rel="stylesheet" href="css/style.css">
-{% endblock %}
 <body>
     {% block body %}
 
@@ -13,8 +10,8 @@
     </div>
     
     <form action="" margin:auto" method="POST">
-        <div class="row options-row">
-            <div class="col-md-3 options">
+        <div class="row options-row" style="margin: auto;">
+            <div class="col-md-4 options">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
                     <label class="form-check-label" for="flexCheckChecked">
@@ -22,7 +19,7 @@
                     </label>
                 </div>
             </div>
-            <div class="col-md-3 options">
+            <div class="col-md-4 options">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
                     <label class="form-check-label" for="flexCheckChecked">
@@ -30,7 +27,7 @@
                     </label>
                 </div>
             </div>
-            <div class="col-md-3 options">
+            <div class="col-md-4 options">
                 <div class="form-group">
                     <label for="damage-type">Damage type</label>
                     <select name="damage-type" id="damage-type" class="form-control">
@@ -43,7 +40,7 @@
         </div>
         <div class="row submit-row">
             <div class="col-md-12 text-center">
-                <button class="btn btn-primary" type="submit">Search</button>
+                <button class="btn btn-primary" type="submit">Go</button>
             </div>
         </div>
     </form>
