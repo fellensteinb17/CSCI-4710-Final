@@ -21,6 +21,9 @@ app.config['IMAGE_FOLDER'] = IMAGE_FOLDER
 
 @app.route('/')
 def main():
+    
+    smite_logo = os.path.join(app.config['IMAGE_FOLDER'], 'SmiteLogo.png')
+
     return render_template('home.html')
     
 @app.route('/About')
