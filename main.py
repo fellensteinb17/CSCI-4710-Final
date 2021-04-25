@@ -14,7 +14,7 @@ app.config['IMAGE_FOLDER'] = IMAGE_FOLDER
 
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def main():
     
     smite_logo = os.path.join(app.config['IMAGE_FOLDER'], 'SmiteLogo.png')
