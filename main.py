@@ -7,11 +7,6 @@ import requests
 IMAGE_FOLDER = os.path.join('static', 'images')
 
 
-
-
-
-
-
 app = Flask(__name__)
 
 
