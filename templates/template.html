@@ -1,38 +1,42 @@
 ﻿<!doctype html>
 <html lang="en">
 <head>
-    	{% block head %}
+    {% block head %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha3>
     <link rel="stylesheet" href="style.css" />
-	{% endblock %}
+
+        {% block navbar %}
+
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <a href="/" class="navbar-brand">Home</a>
+            <button class="navbar-toggler  ml-auto" data-toggle="collapse" data-target="#navbarMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a href="/About" class="nav-link">About Us</a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+        {% endblock %}
+    {% endblock %}
 </head>
-{% block body %}
 <body>
-	{% block navbar %}
+{% block body %}
+	
 
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <a href="/" class="navbar-brand">Home</a>
-        <button class="navbar-toggler  ml-auto" data-toggle="collapse" data-target="#navbarMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarMenu">
-            <ul class="navbar-nav">
-               
-                <li class="nav-item">
-                  <a href="/About" class="nav-link">About Us</a>
-                </li>
 
-            </ul>
-        </div>
-    </nav>
-	{% endblock %}
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbg>        
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U>
-</body>
 {% endblock %}
+</body>
 
 </html>
