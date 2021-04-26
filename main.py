@@ -152,10 +152,21 @@ def random():
         random_god = Gods.query.filter_by(role=' Warrior').order_by(func.random()).limit(1)
 
     god_role = [y.role for y in random_god]
+    items_needed = 6
+    print(request.form.get("boots"))
+    #if request.form.get("boots") == True:
+        #print("boots checked")
+
     if god_role == [' Mage']:
-        items = Items.query.filter_by(mage = 1).order_by(func.random()).limit(6)
-    if request.form.get("boots") == True:
-        print("boots checked")
+        items = Items.query.filter_by(mage = 1).order_by(func.random()).limit(items_needed)
+    elif god_role == [' Guardian']:
+        items = Items.query.filter_by(guardian = 1).order_by(func.random()).limit(items_needed)
+    elif god_role == [' Hunter']:
+        items = Items.query.filter_by(hunter = 1).order_by(func.random()).limit(items_needed)
+    elif god_role == [' Assassin']:
+        items = Items.query.filter_by(assassin = 1).order_by(func.random()).limit(items_needed)
+    elif god_role == [' Warrior']:
+        items = Items.query.filter_by(warrior = 1).order_by(func.random()).limit(items_needed)
       
 
     return render_template('home.html', smite_logo = smite_logo, data_god=random_god, column_html=Items.__table__.columns.keys(), data_items=items)
