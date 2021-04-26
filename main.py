@@ -153,9 +153,19 @@ def random():
 
     god_role = [y.role for y in random_god]
     items_needed = 6
-    print(request.form.get("boots"))
-    #if request.form.get("boots") == True:
-        #print("boots checked")
+    
+    if request.form.get("boots") == 1:
+        items_needed = items_needed - 1
+        if god_role == [' Mage']:
+            boots = Boots.query.filter_by(mage = 1).order_by(func.random()).limit(1)
+        elif god_role == [' Guardian']:
+            boots = Boots.query.filter_by(guardian = 1).order_by(func.random()).limit(1)
+        elif god_role == [' Hunter']:
+            boots = Boots.query.filter_by(hunter = 1).order_by(func.random()).limit(1)
+        elif god_role == [' Assassin']:
+            boots = Boots.query.filter_by(assassin = 1).order_by(func.random()).limit(1)
+        elif god_role == [' Warrior']:
+            boots = Boots.query.filter_by(warrior = 1).order_by(func.random()).limit(1)
 
     if god_role == [' Mage']:
         items = Items.query.filter_by(mage = 1).order_by(func.random()).limit(items_needed)
@@ -169,7 +179,7 @@ def random():
         items = Items.query.filter_by(warrior = 1).order_by(func.random()).limit(items_needed)
       
 
-    return render_template('home.html', smite_logo = smite_logo, data_god=random_god, column_html=Items.__table__.columns.keys(), data_items=items)
+    return render_template('home.html', smite_logo = smite_logo, data_god=random_god, column_html=Items.__table__.columns.keys(), data_items=items, data_boots=boots)
 
 @app.route('/About')
 def about():
