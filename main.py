@@ -49,28 +49,41 @@ def index():
     with open('smite_gods.csv', newline='') as csvfile:
         csv_reader = csv.reader(csvfile, delimiter=',')
         for row in csv_reader:
-        	newgod = Gods(image=row[0], name=row[1], pantheon=row[2], damage=row[3], role=row[4])
-        	db.session.add(newgod)
-        	db.session.commit()
+            newgod = Gods(image=row[0], name=row[1], pantheon=row[2], damage=row[3], role=row[4])
+            db.session.add(newgod)
+            db.session.commit()
 
     #db.drop_all()
     db.create_all()
     with open('relics.csv', newline='') as csvfile:
         csv_reader = csv.reader(csvfile, delimiter=',')
         for row in csv_reader:
-        	newrelic = Relics(image=row[0], name=row[1])
-        	db.session.add(newrelic)
-        	db.session.commit()
+            newrelic = Relics(image=row[0], name=row[1])
+            db.session.add(newrelic)
+            db.session.commit()
 
     db.create_all()
 
-    random = Gods.query.order_by(func.random()).limit(1)
-    #god_icon = os.path.join(app.config['IMAGE_FOLDER'], 'Gods', random["image"])
+    if request.method == 'GET':
+        return render_template('home.html', smite_logo = smite_logo)
+        
+    elif request.method =='POST':
+        if request.form.get("damage-type") == "1":
+            random_god = Gods.query.order_by(func.random()).limit(1)
+            return render_template('home.html', smite_logo = smite_logo, data_god=random_god)
+
+        elif request.form.get("damage-type") == "2":
+            random_god = Gods.query.filter_by(damage=' Magical').order_by(func.random()).limit(1)
+            return render_template('home.html', smite_logo = smite_logo, data_god=random_god)
+
+        elif request.form.get("damage-type") == "3":
+            random_god = Gods.query.filter_by(damage=' Physical').order_by(func.random()).limit(1)
+            return render_template('home.html', smite_logo = smite_logo, data_god=random_god)
     #query_all_gods = Gods.query.filter_by(role=' Mage').all()
     #query_all_relics = Relics.query.all()
     #return render_template('home.html', smite_logo = smite_logo, column_gods=Gods.__table__.columns.keys(), data_gods= query_all_gods, column_relics=Relics.__table__.columns.keys(), data_relics= query_all_relics)
-    return render_template('home.html', smite_logo = smite_logo, column_god=Gods.__table__.columns.keys(), data_god=random)
-    
+
+
 @app.route('/About')
 def about():
     return render_template('about.html')
