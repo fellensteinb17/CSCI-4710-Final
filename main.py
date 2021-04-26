@@ -128,7 +128,7 @@ def index():
     #query_all_relics = Relics.query.all()
     #return render_template('home.html', smite_logo = smite_logo, column_gods=Gods.__table__.columns.keys(), data_gods= query_all_gods, column_relics=Relics.__table__.columns.keys(), data_relics= query_all_relics)
 
-@app.route('/random', methods=['POST'])
+@app.route('/random', methods=['GET','POST'])
 def random():
     
     if request.form.get("role") == "1":
