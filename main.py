@@ -154,7 +154,7 @@ def random():
     god_role = [y.role for y in random_god]
     items_needed = 6
     
-    if request.form.get("boots") == 1:
+    if request.form.get("boots") == "1":
         items_needed = items_needed - 1
         if god_role == [' Mage']:
             boots = Boots.query.filter_by(mage = 1).order_by(func.random()).limit(1)
