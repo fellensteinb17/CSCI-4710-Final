@@ -82,23 +82,42 @@
         </tbody>
     </table>
 
-    {{ data_items }}
-    <!--<table class="table" id="table_items" style="width:24%">
-        <colgroup>
-            <col span="1" style="width:12%">
-            <col span="1" style="width:12%">
-        </colgroup>
+    <table class="table" id="table_items">        
+        <thead>
+            <tr>
+            {% for key in column_html %}
+                <th>{{key}}</th>
+            {% endfor %}
+          </tr>
+        </thead>
         <tbody>
             {% for item in data_items %}
-                <tr>
+            <tr>
+                <td>
                     {{item.name}}
-                </tr>
-                <tr>
+                </td>
+                <td>
                     {{item.image}}
-                </tr>
+                </td>
+                <td>
+                    {{item.mage}}
+                </td>
+                <td>
+                    {{item.guardian}}
+                </td>
+                <td>
+                    {{item.hunter}}
+                </td>
+                <td>
+                    {{item.assassin}}
+                </td>
+                <td>
+                    {{item.warrior}}
+                </td>
+            </tr>
             {% endfor %}
         </tbody>        
-    </table>-->
+    </table>
 
     {% endblock %}
     </body>
