@@ -131,16 +131,26 @@ def index():
 @app.route('/random', methods=['POST'])
 def random():
     
-    items = Items.query.all()
+    items = Items.query.order_by(func.random()).limit(6)
+    if request.form.get("role") == "1":
+        if request.form.get("damage-type") == "1":
+            random_god = Gods.query.order_by(func.random()).limit(1)
 
-    if request.form.get("damage-type") == "1":
-        random_god = Gods.query.order_by(func.random()).limit(1)
+        elif request.form.get("damage-type") == "2":
+            random_god = Gods.query.filter_by(damage=' Magical').order_by(func.random()).limit(1)
 
-    elif request.form.get("damage-type") == "2":
-        random_god = Gods.query.filter_by(damage=' Magical').order_by(func.random()).limit(1)
-
-    elif request.form.get("damage-type") == "3":
-        random_god = Gods.query.filter_by(damage=' Physical').order_by(func.random()).limit(1)
+        elif request.form.get("damage-type") == "3":
+            random_god = Gods.query.filter_by(damage=' Physical').order_by(func.random()).limit(1)
+    elif request.form.get("role") == "2":
+        random_god = Gods.query.filter_by(role='Mage').order_by(func.random()).limit(1)
+    elif request.form.get("role") == "3":
+        random_god = Gods.query.filter_by(role='Gaurdian').order_by(func.random()).limit(1)
+    elif request.form.get("role") == "4":
+        random_god = Gods.query.filter_by(role='Hunter').order_by(func.random()).limit(1)
+    elif request.form.get("role") == "5":
+        random_god = Gods.query.filter_by(role='Assassin').order_by(func.random()).limit(1)
+    elif request.form.get("role") == "6":
+        random_god = Gods.query.filter_by(role='Warrior').order_by(func.random()).limit(1)
 
     return render_template('home.html', smite_logo = smite_logo, data_god=random_god, column_html=Items.__table__.columns.keys(), data_items=items)
 
