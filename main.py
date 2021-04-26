@@ -44,11 +44,11 @@ class Items(db.Model):
 	__tablename__ = 'Items'
 	name = db.Column(db.String(40), primary_key=True)
 	image = db.Column(db.String(255))
-    mage = db.Column(db.Boolean)
-    guardian = db.Column(db.Boolean)
-    hunter = db.Column(db.Boolean)
-    assassin = db.Column(db.Boolean)
-    warrior = db.Column(db.Boolean)
+	mage = db.Column(db.Boolean)
+	gaurdian = db.Column(db.Boolean)
+	hunter = db.Column(db.Boolean)
+	assassin = db.Column(db.Boolean)
+	warrior = db.Column(db.Boolean)
 	def __repr__(self):
 		return '<Items %r >' % self.__dict__
 
@@ -56,11 +56,11 @@ class Boots(db.Model):
 	__tablename__ = 'Boots'
 	name = db.Column(db.String(40), primary_key=True)
 	image = db.Column(db.String(255))
-    mage = db.Column(db.Boolean)
-    guardian = db.Column(db.Boolean)
-    hunter = db.Column(db.Boolean)
-    assassin = db.Column(db.Boolean)
-    warrior = db.Column(db.Boolean)
+	mage = db.Column(db.Boolean)
+	gaurdian = db.Column(db.Boolean)
+	hunter = db.Column(db.Boolean)
+	assassin = db.Column(db.Boolean)
+	warrior = db.Column(db.Boolean)
 	def __repr__(self):
 		return '<Boots %r >' % self.__dict__
 
@@ -68,11 +68,11 @@ class Starters(db.Model):
 	__tablename__ = 'Starters'
 	name = db.Column(db.String(40), primary_key=True)
 	image = db.Column(db.String(255))
-    mage = db.Column(db.Boolean)
-    guardian = db.Column(db.Boolean)
-    hunter = db.Column(db.Boolean)
-    assassin = db.Column(db.Boolean)
-    warrior = db.Column(db.Boolean)
+	mage = db.Column(db.Boolean)
+	gaurdian = db.Column(db.Boolean)
+	hunter = db.Column(db.Boolean)
+	assassin = db.Column(db.Boolean)
+	warrior = db.Column(db.Boolean)
 	def __repr__(self):
 		return '<Starters %r >' % self.__dict__
 
@@ -122,7 +122,6 @@ def index():
             db.session.add(newstarter)
             db.session.commit()
 
-     db.create_all()
 
     if request.method == 'GET':
         return render_template('home.html', smite_logo = smite_logo)
