@@ -144,7 +144,7 @@ def random():
     elif request.form.get("role") == "2":
         random_god = Gods.query.filter_by(role=' Mage').order_by(func.random()).limit(1)
     elif request.form.get("role") == "3":
-        random_god = Gods.query.filter_by(role=' Gaurdian').order_by(func.random()).limit(1)
+        random_god = Gods.query.filter_by(role=' Guardian').order_by(func.random()).limit(1)
     elif request.form.get("role") == "4":
         random_god = Gods.query.filter_by(role=' Hunter').order_by(func.random()).limit(1)
     elif request.form.get("role") == "5":
