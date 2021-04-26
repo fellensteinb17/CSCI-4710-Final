@@ -40,6 +40,42 @@ class Relics(db.Model):
 	def __repr__(self):
 		return '<Relics %r >' % self.__dict__
 
+class Items(db.Model):
+	__tablename__ = 'Items'
+	name = db.Column(db.String(40), primary_key=True)
+	image = db.Column(db.String(255))
+    mage = db.Column(db.Boolean)
+    guardian = db.Column(db.Boolean)
+    hunter = db.Column(db.Boolean)
+    assassin = db.Column(db.Boolean)
+    warrior = db.Column(db.Boolean)
+	def __repr__(self):
+		return '<Items %r >' % self.__dict__
+
+class Boots(db.Model):
+	__tablename__ = 'Boots'
+	name = db.Column(db.String(40), primary_key=True)
+	image = db.Column(db.String(255))
+    mage = db.Column(db.Boolean)
+    guardian = db.Column(db.Boolean)
+    hunter = db.Column(db.Boolean)
+    assassin = db.Column(db.Boolean)
+    warrior = db.Column(db.Boolean)
+	def __repr__(self):
+		return '<Boots %r >' % self.__dict__
+
+class Starters(db.Model):
+	__tablename__ = 'Starters'
+	name = db.Column(db.String(40), primary_key=True)
+	image = db.Column(db.String(255))
+    mage = db.Column(db.Boolean)
+    guardian = db.Column(db.Boolean)
+    hunter = db.Column(db.Boolean)
+    assassin = db.Column(db.Boolean)
+    warrior = db.Column(db.Boolean)
+	def __repr__(self):
+		return '<Starters %r >' % self.__dict__
+
 @app.route('/', methods=['GET', 'POST'])
 def index():    
     smite_logo = os.path.join(app.config['IMAGE_FOLDER'], 'SmiteLogo.png')
@@ -63,6 +99,30 @@ def index():
             db.session.commit()
 
     db.create_all()
+    with open('items.csv', newline='') as csvfile:
+        csv_reader = csv.reader(csvfile, delimiter=',')
+        for row in csv_reader:
+            newitem = Items(name=row[0], image=row[1], mage=row[2], gaurdian=row[3], hunter=row[4], assassin=row[5], warrior=row[6])
+            db.session.add(newitem)
+            db.session.commit()
+
+    db.create_all()
+    with open('boots.csv', newline='') as csvfile:
+        csv_reader = csv.reader(csvfile, delimiter=',')
+        for row in csv_reader:
+            newboot = Boots(name=row[0], image=row[1], mage=row[2], gaurdian=row[3], hunter=row[4], assassin=row[5], warrior=row[6])
+            db.session.add(newboot)
+            db.session.commit()
+
+    db.create_all()
+    with open('starters.csv', newline='') as csvfile:
+        csv_reader = csv.reader(csvfile, delimiter=',')
+        for row in csv_reader:
+            newstarter = Starters(name=row[0], image=row[1], mage=row[2], gaurdian=row[3], hunter=row[4], assassin=row[5], warrior=row[6])
+            db.session.add(newstarter)
+            db.session.commit()
+
+     db.create_all()
 
     if request.method == 'GET':
         return render_template('home.html', smite_logo = smite_logo)
