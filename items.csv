@@ -1,35 +1,35 @@
 Ancile,Ancile_T3.png Ancile ,0,0,1,1,1
-Arondight,TitansBane_T3.png ,0,0,0,1,1
-Asi,WindDemon_T3.png ,0,0,1,1,1
+Arondight,Arondight_T3.png ,0,0,0,1,1
+Asi,Asi_T3.png ,0,0,1,1,1
 Atalanta's Bow,AtalantasBow_T3.png ,0,0,1,1,1
 Bancroft's Talon,BancroftsTalon_T3.png,1,1,0,0,0
-Berserker's Shield,Arondight_T3.png ,0,0,1,1,1
+Berserker's Shield,BerserkersShield T2.png ,0,0,1,1,1
 Blackthorn Hammer,BlackthornHammer_T3.png ,0,0,1,1,1
 Bloodforge,Bloodforge_T3.png ,0,0,1,1,1
-Book of the Dead,BerserkersShield T2.png ,1,1,0,0,0
+Book of the Dead,BookoftheDead_T3.png ,1,1,0,0,0
 Book of Thoth,BookofThoth_T3.png ,1,1,0,0,0
-Brawler's Beat Stick,GauntletofThebes_T3.png ,0,0,1,1,1
-Breastplate of Valor,BulwarkofHope_T3.png ,1,1,1,1,1
-Bulwark of Hope,DemonicGrip_T3.png ,1,1,1,1,1
+Brawler's Beat Stick,BrawlersBeatStick_T3.png ,0,0,1,1,1
+Breastplate of Valor,BreastPlateofValor_T3.png ,1,1,1,1,1
+Bulwark of Hope,BulwarkofHope_T3.png ,1,1,1,1,1
 Caduceus Shield,CaduceusShield_T3.png ,0,0,1,1,1
 Celestial Legion Helm,CelestialLegionHelm_T3.png ,1,1,0,0,0
 Charon's Coin,CharonsCoin_T3.png,1,1,0,0,0
 Chronos' Pendant,ChronosPendant_T3.png ,1,1,0,0,0
 Contagion,Contagion_T3.png ,1,1,1,1,1
 Deathbringer,Deathbringer_T3.png ,0,0,1,1,1
-Demonic Grip,DevourersGauntlet_T3.png ,1,1,0,0,0
-Devourer's Gauntlet,DivineRuin_T3.png ,0,0,1,1,1
-Divine Ruin,FrostboundHammer_T3.png ,1,1,0,0,0
+Demonic Grip,DemonicGrip_T3.png ,1,1,0,0,0
+Devourer's Gauntlet,DevourersGauntlet_T3.png ,0,0,1,1,1
+Divine Ruin,DivineRuin_T3.png ,1,1,0,0,0
 Dominance,Dominance_T3.png ,0,0,1,1,1
 Doom Orb,DoomOrb_T3.png ,1,1,0,0,0
 Emperor's Armor,EmperorsArmor_T3.png ,1,1,1,1,1
-Ethereal Staff,BookoftheDead_T3.png ,1,1,0,0,0
+Ethereal Staff,EtherealStaff_T3.png,1,1,0,0,0
 Fail-not,Fail-not_T3.png ,0,0,1,0,0
-Frostbound Hammer,LonosMask_T3.png ,0,0,1,1,1
-Gauntlet of Thebes,JotunnsWrath_T3.png ,1,1,1,1,1
+Frostbound Hammer,FrostboundHammer_T3.png ,0,0,1,1,1
+Gauntlet of Thebes,GauntletofThebes_T3.png ,1,1,1,1,1
 Gem of Isolation,GemofIsolation_T3.png ,1,1,0,0,0
 Genji's Guard,GenjisGuard_T3.png ,1,1,1,1,1
-Gladiator's Shield,MailofRenewal_T3.png ,0,0,1,1,1
+Gladiator's Shield,GladiatorsShield T2.png ,0,0,1,1,1
 Golden Blade,GoldenBlade_T3.png ,0,0,0,1,1
 Hastened Katana,HastenedKatana_T3.png ,0,0,0,1,1
 Hastened Ring,HastenedRing_T3.png ,1,1,0,0,0
@@ -40,63 +40,63 @@ Hide of the Urchin,HideoftheUrchin_T3.png ,1,1,1,1,1
 Hydra's Lament,HydrasLament_T3.png ,0,0,1,1,1
 Ichaival,Ichaival_T3.png ,0,0,1,1,1
 Jade Emperor's Crown,JadeEmperorsCrown_T3.png ,1,1,0,0,0
-Jotunn's Wrath,MysticalMail_T3.png ,0,0,1,1,1
-Lono's Mask,MidGuardianMail_T3.png ,1,0,1,1,0
+Jotunn's Wrath,JotunnsWrath_T3.png ,0,0,1,1,1
+Lono's Mask,LonosMask_T3.png ,1,0,1,1,0
 Lotus Crown,LotusCrown_T3.png ,1,1,0,0,0
 Magi's Cloak,MagisBlessing_T3.png ,1,1,1,1,1
-Mail of Renewal,Pestilence_T3.png ,1,1,1,1,1
+Mail of Renewal,MailofRenewal_T3.png ,1,1,1,1,1
 Malice,Malice_T3.png ,0,0,1,1,1
 Mantle of Discord,CloakofUnrelentingSorrow_T3.png ,1,1,1,1,1
-Midgardian Mail,PoisonedStar_T3.png ,1,1,1,1,1
-Mystical Mail,ShapeShifterShield_T3.png ,1,1,1,1,1
-Obsidian Shard,Asi_T3.png ,1,1,0,0,0
+Midgardian Mail,MidGuardianMail_T3.png ,1,1,1,1,1
+Mystical Mail,MysticalMail_T3.png ,1,1,1,1,1
+Obsidian Shard,ObsidianShard_T3.png ,1,1,0,0,0
 Odysseus' Bow,OdysseusBow_T3.png ,0,0,1,1,1
 Oni Hunter's Garb,OniHuntersGarb_T3.png ,1,1,1,1,1
-Pestilence,StoneofGaia_T3.png ,1,1,1,1,1
-Poisoned Star,Polynomicon_T3.png ,0,0,1,1,1
-Polynomicon,PythagoremsPiece_T3.png ,1,1,0,0,0
+Pestilence,Pestilence_T3.png ,1,1,1,1,1
+Poisoned Star,PoisonedStar_T3.png ,0,0,1,1,1
+Polynomicon,Polynomicon_T3.png ,1,1,0,0,0
 Pridwen,Pridwen_T3.png ,1,1,1,1,1
-Pythagorem's Piece,SoulGem_T3.png ,1,1,0,0,0
+Pythagorem's Piece,PythagoremsPiece_T3.png ,1,1,0,0,0
 Qin's Sais,Qins Sais.png,0,0,1,1,1
 Rage,Rage_T3.png ,0,0,1,1,1
 Rangda's Mask,RangdasMask_T3.png ,0,1,0,0,1
-Relic Dagger,RitualDagger_T3.png ,1,1,1,1,1
-Ring of Hecate,EtherealStaff_T3.png,1,1,0,0,0
-Rod of Asclepius,RingofHecate_T3.png ,1,1,0,0,0
+Relic Dagger,RingofHecate_T3.png ,1,1,1,1,1
+Ring of Hecate,RitualDagger_T3.png ,1,1,0,0,0
+Rod of Asclepius,RodofAscelpius_T3.png ,1,1,0,0,0
 Rod of Tahuti,RodofTahuti_T3.png ,1,1,0,0,0
 Runeforged Hammer,RuneforgedHammer_T3.png ,0,0,1,1,1
 Runic Shield,RunicShield_T3.png ,0,0,1,1,1
 Serrated Edge,SerratedEdge_T3.png ,0,0,0,1,1
 Shadowsteel Shuriken,ShadowsteelShuriken_T3.png ,0,0,1,1,1
-Shield of Regrowth,ShieldofRegrowth_T3.png  ,1,1,1,1,1
-Shifter's Shield,StoneCuttingSword_T3.png ,0,0,1,1,1
+Shield of Regrowth,ShapeShifterShield_T3.png ,1,1,1,1,1
+Shifter's Shield,ShieldofRegrowth_T3.png  ,0,0,1,1,1
 Shogun's Kusari,ShogunsKusari_T3.png ,1,1,1,1,1
 Silverbranch Bow,SilverbranchBow_T3.png ,0,0,1,1,1
 Soul Eater,SoulEater_T3.png ,0,0,1,1,1
-Soul Gem,TheSledge_T3.png ,1,1,0,0,0
+Soul Gem,SoulGem_T3.png ,1,1,0,0,0
 Soul Reaver,SoulReaver_T3.png ,1,1,0,0,0
 Sovereignty,Sovereignty_T3.png ,1,1,1,1,1
-Spear of Desolation,RodofAscelpius_T3.png ,1,1,0,0,0
-Spear of the Magus,ObsidianShard_T3.png ,1,1,0,0,0
+Spear of Desolation,SpearofDesolation_T3.png ,1,1,0,0,0
+Spear of the Magus,SpearoftheMagus_T3.png ,1,1,0,0,0
 Spectral Armor,SpectralArmor_T3.png ,1,1,1,1,1
 Spirit Robe,SpiritRobe_T3.png ,1,1,1,1,1
 Staff of Myrddin,StaffofMyrddin_T3.png ,1,1,0,0,0
-Stone Cutting Sword,GladiatorsShield T2.png ,0,0,0,1,1
-Stone of Fal,SpearofDesolation_T3.png ,1,1,0,0,0
-Stone of Gaia,VoidStone_T3.png ,1,1,1,1,1
+Stone Cutting Sword,StoneCuttingSword_T3.png ,0,0,0,1,1
+Stone of Fal,StoneofFal_T3.png ,1,1,0,0,0
+Stone of Gaia,StoneofGaia_T3.png ,1,1,1,1,1
 Talisman of Energy,TalismanoftheRelentless_T3.png ,1,1,1,1,1
 Telkhines Ring,TelkhinesRing_T3.png ,1,1,0,0,0
-The Crusher,TheCrusher_T3.png ,0,0,1,1,1
-The Executioner,The Executioner.png ,0,0,1,1,1
-The Sledge,BrawlersBeatStick_T3.png ,0,0,1,1,1
-Titan's Bane,SpearoftheMagus_T3.png ,0,0,1,1,1
+The Crusher,The Executioner.png ,0,0,1,1,1
+The Executioner,TheCrusher_T3.png ,0,0,1,1,1
+The Sledge,TheSledge_T3.png ,0,0,1,1,1
+Titan's Bane,TitansBane_T3.png ,0,0,1,1,1
 Toxic Blade,ToxicBlade_T3.png ,0,0,1,1,1
 Transcendence,Transcendence_T3.png,0,0,1,1,1
 Typhon's Fang,TyphonsFang_T3.png ,1,1,0,0,0
 Tyrannical Plate Helm,TyrannicalPlateHelm_T3.png,1,1,0,0,0
 Void Shield,VoidShield_T3.png ,0,0,1,1,1
-Void Stone,BreastPlateofValor_T3.png ,1,1,0,0,0
-Warlock's Staff,StoneofFal_T3.png ,1,1,0,0,0
-Wind Demon,WarlocksStaff_T3.png ,0,0,1,1,1
+Void Stone,VoidStone_T3.png ,1,1,0,0,0
+Warlock's Staff,WarlocksStaff_T3.png ,1,1,0,0,0
+Wind Demon,WindDemon_T3.png ,0,0,1,1,1
 Winged Blade,WingedBlade_T3.png ,1,1,1,1,1
 Witchblade,Witchblade_T3.png ,1,1,1,1,1
