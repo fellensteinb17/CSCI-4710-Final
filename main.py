@@ -151,14 +151,13 @@ def random():
         random_god = Gods.query.filter_by(role=' Assassin').order_by(func.random()).limit(1)
     elif request.form.get("role") == "6":
         random_god = Gods.query.filter_by(role=' Warrior').order_by(func.random()).limit(1)
+
     
-    god_role = [y.role for y in random_god]
-    print(god_role)
-    if request.form.get("boots") == True:
-        print("boots checked")
+   
 
 
     
+
     return render_template('home.html', smite_logo = smite_logo, data_god=random_god, column_html=Items.__table__.columns.keys(), data_items=items)
 
 @app.route('/About')
