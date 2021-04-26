@@ -131,7 +131,6 @@ def index():
 @app.route('/random', methods=['POST'])
 def random():
     
-    items = Items.query.order_by(func.random()).limit(6)
     if request.form.get("role") == "1":
         if request.form.get("damage-type") == "1":
             random_god = Gods.query.order_by(func.random()).limit(1)
@@ -153,7 +152,8 @@ def random():
         random_god = Gods.query.filter_by(role=' Warrior').order_by(func.random()).limit(1)
 
     god_role = [y.role for y in random_god]
-    print(god_role)
+    if god_role == [' Mage']:
+        items = Items.query.filter_by(mage = 1).order_by(func.random()).limit(6)
     if request.form.get("boots") == True:
         print("boots checked")
       
