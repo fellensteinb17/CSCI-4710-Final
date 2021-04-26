@@ -6,7 +6,7 @@ import json
 import csv
 import pandas as pd
 import requests
-import util
+
 
 # get current app directory
 basedir = os.path.abspath(os.path.dirname(__file__))
