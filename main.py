@@ -47,11 +47,11 @@ class Items(db.Model):
 	__tablename__ = 'Items'
 	name = db.Column(db.String(40), primary_key=True)
 	image = db.Column(db.String(255))
-	mage = db.Column(db.Integer)
-	gaurdian = db.Column(db.Integer)
-	hunter = db.Column(db.Integer)
-	assassin = db.Column(db.Integer)
-	warrior = db.Column(db.Integer)
+	mage = db.Column(db.Boolean)
+	gaurdian = db.Column(db.Boolean)
+	hunter = db.Column(db.Boolean)
+	assassin = db.Column(db.Boolean)
+	warrior = db.Column(db.Boolean)
 	def __repr__(self):
 		return '<Items %r >' % self.__dict__
 
@@ -59,11 +59,11 @@ class Boots(db.Model):
 	__tablename__ = 'Boots'
 	name = db.Column(db.String(40), primary_key=True)
 	image = db.Column(db.String(255))
-	mage = db.Column(db.Integer)
-	gaurdian = db.Column(db.Integer)
-	hunter = db.Column(db.Integer)
-	assassin = db.Column(db.Integer)
-	warrior = db.Column(db.Integer)
+	mage = db.Column(db.Boolean)
+	gaurdian = db.Column(db.Boolean)
+	hunter = db.Column(db.Boolean)
+	assassin = db.Column(db.Boolean)
+	warrior = db.Column(db.Boolean)
 	def __repr__(self):
 		return '<Boots %r >' % self.__dict__
 
@@ -71,11 +71,11 @@ class Starters(db.Model):
 	__tablename__ = 'Starters'
 	name = db.Column(db.String(40), primary_key=True)
 	image = db.Column(db.String(255))
-	mage = db.Column(db.Integer)
-	gaurdian = db.Column(db.Integer)
-	hunter = db.Column(db.Integer)
-	assassin = db.Column(db.Integer)
-	warrior = db.Column(db.Integer)
+	mage = db.Column(db.Boolean)
+	gaurdian = db.Column(db.Boolean)
+	hunter = db.Column(db.Boolean)
+	assassin = db.Column(db.Boolean)
+	warrior = db.Column(db.Boolean)
 	def __repr__(self):
 		return '<Starters %r >' % self.__dict__
 
@@ -130,7 +130,19 @@ def index():
 
 @app.route('/random', methods=['POST'])
 def random():
+    if_boots = request.form.get("boots")
+    if if_boots:
+        boots = Boots.query.all()
+    else:
+        boots = "nothing"
 
+    if_starter = request.form.get("starter")
+    if if_starter:
+        starters = Starters.query.all()
+    else:
+        starters = "nothing"
+
+    items = Items.query.all()
 
     if request.form.get("damage-type") == "1":
         random_god = Gods.query.order_by(func.random()).limit(1)
@@ -141,7 +153,7 @@ def random():
     elif request.form.get("damage-type") == "3":
         random_god = Gods.query.filter_by(damage=' Physical').order_by(func.random()).limit(1)
 
-    return render_template('home.html', smite_logo = smite_logo, data_god=random_god)
+    return render_template('home.html', smite_logo = smite_logo, data_god=random_god, data_items=items[0])#util.items(random_god, items, if_boots, boots, if_starter, starters))
 
 @app.route('/About')
 def about():
