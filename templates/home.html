@@ -9,11 +9,11 @@
 
     </div>
     
-    <form action="" margin:auto method="POST">
+    <form action="/random" margin:auto method="POST">
         <div class="row options-row" style="margin: auto;">
             <div class="col-md-4 options">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <input class="form-check-input" type="checkbox" name="boots" value="" id="flexCheckChecked" checked>
                     <label class="form-check-label" for="flexCheckChecked">
                         Boots
                     </label>
@@ -21,7 +21,7 @@
             </div>
             <div class="col-md-4 options">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <input class="form-check-input" type="checkbox" name="starter" value="" id="flexCheckChecked" checked>
                     <label class="form-check-label" for="flexCheckChecked">
                         Starter item
                     </label>
@@ -40,7 +40,7 @@
         </div>
         <div class="row submit-row">
             <div class="col-md-12 text-center">
-                <button class="btn btn-primary" type="submit" href="/">Go</button>
+                <button class="btn btn-primary" type="submit">Go</button>
             </div>
         </div>
     </form>
@@ -50,14 +50,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    <table class="table" id=table_god>
-        <!--<thead>
-          <tr>
-            {% for item in column_god %}
-                <th>{{item}}</th>
-            {% endfor %}
-          </tr>
-        </thead>-->
+
+    <table class="table" id="table_god" style="width:25%">
+        <colgroup>
+            <col span="1" style="width:5%">
+            <col span="1" style="width:5%">
+            <col span="1" style="width:5%">
+            <col span="1" style="width:5%">
+            <col span="1" style="width:5%">
+        </colgroup>
         <tbody>         
             {% for id in data_god %}
                 <tr>
@@ -80,6 +81,24 @@
             {% endfor %}
         </tbody>
     </table>
+
+    {{ data_items }}
+    <!--<table class="table" id="table_items" style="width:24%">
+        <colgroup>
+            <col span="1" style="width:12%">
+            <col span="1" style="width:12%">
+        </colgroup>
+        <tbody>
+            {% for item in data_items %}
+                <tr>
+                    {{item.name}}
+                </tr>
+                <tr>
+                    {{item.image}}
+                </tr>
+            {% endfor %}
+        </tbody>        
+    </table>-->
 
     {% endblock %}
     </body>
