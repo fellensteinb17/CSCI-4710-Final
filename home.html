@@ -82,42 +82,6 @@
         </tbody>
     </table>
 
-    <table class="table" id="table_items">        
-        <thead>
-            <tr>
-            {% for key in column_html %}
-                <th>{{key}}</th>
-            {% endfor %}
-          </tr>
-        </thead>
-        <tbody>
-            {% for item in data_items %}
-            <tr>
-                <td>
-                    {{item.name}}
-                </td>
-                <td>
-                    {{item.image}}
-                </td>
-                <td>
-                    {{item.mage}}
-                </td>
-                <td>
-                    {{item.guardian}}
-                </td>
-                <td>
-                    {{item.hunter}}
-                </td>
-                <td>
-                    {{item.assassin}}
-                </td>
-                <td>
-                    {{item.warrior}}
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>        
-    </table>
 
     {% endblock %}
     </body>

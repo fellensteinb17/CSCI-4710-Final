@@ -6,6 +6,7 @@ import json
 import csv
 import pandas as pd
 import requests
+import util
 
 # get current app directory
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -22,6 +23,8 @@ db = SQLAlchemy(app)
 IMAGE_FOLDER = os.path.join('static', 'images')
 
 app.config['IMAGE_FOLDER'] = IMAGE_FOLDER
+
+smite_logo = os.path.join(app.config['IMAGE_FOLDER'], 'SmiteLogo.png')
 
 class Gods(db.Model):
 	__tablename__ = 'Gods'
@@ -44,11 +47,11 @@ class Items(db.Model):
 	__tablename__ = 'Items'
 	name = db.Column(db.String(40), primary_key=True)
 	image = db.Column(db.String(255))
-	mage = db.Column(db.Boolean)
-	gaurdian = db.Column(db.Boolean)
-	hunter = db.Column(db.Boolean)
-	assassin = db.Column(db.Boolean)
-	warrior = db.Column(db.Boolean)
+	mage = db.Column(db.Integer)
+	guardian = db.Column(db.Integer)
+	hunter = db.Column(db.Integer)
+	assassin = db.Column(db.Integer)
+	warrior = db.Column(db.Integer)
 	def __repr__(self):
 		return '<Items %r >' % self.__dict__
 
@@ -56,11 +59,11 @@ class Boots(db.Model):
 	__tablename__ = 'Boots'
 	name = db.Column(db.String(40), primary_key=True)
 	image = db.Column(db.String(255))
-	mage = db.Column(db.Boolean)
-	gaurdian = db.Column(db.Boolean)
-	hunter = db.Column(db.Boolean)
-	assassin = db.Column(db.Boolean)
-	warrior = db.Column(db.Boolean)
+	mage = db.Column(db.Integer)
+	guardian = db.Column(db.Integer)
+	hunter = db.Column(db.Integer)
+	assassin = db.Column(db.Integer)
+	warrior = db.Column(db.Integer)
 	def __repr__(self):
 		return '<Boots %r >' % self.__dict__
 
@@ -68,18 +71,16 @@ class Starters(db.Model):
 	__tablename__ = 'Starters'
 	name = db.Column(db.String(40), primary_key=True)
 	image = db.Column(db.String(255))
-	mage = db.Column(db.Boolean)
-	gaurdian = db.Column(db.Boolean)
-	hunter = db.Column(db.Boolean)
-	assassin = db.Column(db.Boolean)
-	warrior = db.Column(db.Boolean)
+	mage = db.Column(db.Integer)
+	guardian = db.Column(db.Integer)
+	hunter = db.Column(db.Integer)
+	assassin = db.Column(db.Integer)
+	warrior = db.Column(db.Integer)
 	def __repr__(self):
 		return '<Starters %r >' % self.__dict__
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def index():    
-    smite_logo = os.path.join(app.config['IMAGE_FOLDER'], 'SmiteLogo.png')
-
     db.drop_all()
     db.create_all()
     with open('smite_gods.csv', newline='') as csvfile:
@@ -102,7 +103,7 @@ def index():
     with open('items.csv', newline='') as csvfile:
         csv_reader = csv.reader(csvfile, delimiter=',')
         for row in csv_reader:
-            newitem = Items(name=row[0], image=row[1], mage=row[2], gaurdian=row[3], hunter=row[4], assassin=row[5], warrior=row[6])
+            newitem = Items(name=row[0], image=row[1], mage=row[2], guardian=row[3], hunter=row[4], assassin=row[5], warrior=row[6])
             db.session.add(newitem)
             db.session.commit()
 
@@ -110,7 +111,7 @@ def index():
     with open('boots.csv', newline='') as csvfile:
         csv_reader = csv.reader(csvfile, delimiter=',')
         for row in csv_reader:
-            newboot = Boots(name=row[0], image=row[1], mage=row[2], gaurdian=row[3], hunter=row[4], assassin=row[5], warrior=row[6])
+            newboot = Boots(name=row[0], image=row[1], mage=row[2], guardian=row[3], hunter=row[4], assassin=row[5], warrior=row[6])
             db.session.add(newboot)
             db.session.commit()
 
@@ -118,30 +119,30 @@ def index():
     with open('starters.csv', newline='') as csvfile:
         csv_reader = csv.reader(csvfile, delimiter=',')
         for row in csv_reader:
-            newstarter = Starters(name=row[0], image=row[1], mage=row[2], gaurdian=row[3], hunter=row[4], assassin=row[5], warrior=row[6])
+            newstarter = Starters(name=row[0], image=row[1], mage=row[2], guardian=row[3], hunter=row[4], assassin=row[5], warrior=row[6])
             db.session.add(newstarter)
             db.session.commit()
 
-
-    if request.method == 'GET':
-        return render_template('home.html', smite_logo = smite_logo)
-        
-    elif request.method =='POST':
-        if request.form.get("damage-type") == "1":
-            random_god = Gods.query.order_by(func.random()).limit(1)
-            return render_template('home.html', smite_logo = smite_logo, data_god=random_god)
-
-        elif request.form.get("damage-type") == "2":
-            random_god = Gods.query.filter_by(damage=' Magical').order_by(func.random()).limit(1)
-            return render_template('home.html', smite_logo = smite_logo, data_god=random_god)
-
-        elif request.form.get("damage-type") == "3":
-            random_god = Gods.query.filter_by(damage=' Physical').order_by(func.random()).limit(1)
-            return render_template('home.html', smite_logo = smite_logo, data_god=random_god)
+    return render_template('home.html', smite_logo = smite_logo)
     #query_all_gods = Gods.query.filter_by(role=' Mage').all()
     #query_all_relics = Relics.query.all()
     #return render_template('home.html', smite_logo = smite_logo, column_gods=Gods.__table__.columns.keys(), data_gods= query_all_gods, column_relics=Relics.__table__.columns.keys(), data_relics= query_all_relics)
 
+@app.route('/random', methods=['POST'])
+def random():
+    
+    items = Items.query.all()
+
+    if request.form.get("damage-type") == "1":
+        random_god = Gods.query.order_by(func.random()).limit(1)
+
+    elif request.form.get("damage-type") == "2":
+        random_god = Gods.query.filter_by(damage=' Magical').order_by(func.random()).limit(1)
+
+    elif request.form.get("damage-type") == "3":
+        random_god = Gods.query.filter_by(damage=' Physical').order_by(func.random()).limit(1)
+
+    return render_template('home.html', smite_logo = smite_logo, data_god=random_god, column_html=Items.__table__.columns.keys(), data_items=items)
 
 @app.route('/About')
 def about():
