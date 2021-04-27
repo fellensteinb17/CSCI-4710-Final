@@ -104,6 +104,31 @@
           </tr>
         </thead>
         <tbody>
+            {% for item in data_starter %}
+            <tr>
+                <td>
+                    {{item.name}}
+                </td>
+                <td>
+                    {{item.image}}
+                </td>
+                <td>
+                    {{item.mage}}
+                </td>
+                <td>
+                    {{item.guardian}}
+                </td>
+                <td>
+                    {{item.hunter}}
+                </td>
+                <td>
+                    {{item.assassin}}
+                </td>
+                <td>
+                    {{item.warrior}}
+                </td>
+            </tr>
+            {% endfor %}
             {% for item in data_boots %}
             <tr>
                 <td>
