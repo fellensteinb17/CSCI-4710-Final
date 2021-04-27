@@ -95,7 +95,7 @@
         </tbody>
     </table>
 
-    <table class="table" id="table_items">        
+   <table class="table" id="table_items">        
         <thead>
             <tr>
             {% for key in column_html %}
@@ -110,23 +110,9 @@
                     {{item.name}}
                 </td>
                 <td>
-                    {{item.image}}
+                    <img src="/static/images/Items/starters/{{item.image}}">
                 </td>
-                <td>
-                    {{item.mage}}
-                </td>
-                <td>
-                    {{item.guardian}}
-                </td>
-                <td>
-                    {{item.hunter}}
-                </td>
-                <td>
-                    {{item.assassin}}
-                </td>
-                <td>
-                    {{item.warrior}}
-                </td>
+                
             </tr>
             {% endfor %}
             {% for item in data_boots %}
@@ -135,23 +121,9 @@
                     {{item.name}}
                 </td>
                 <td>
-                    {{item.image}}
+                    <img src="/static/images/Items/boots/{{item.image}}">
                 </td>
-                <td>
-                    {{item.mage}}
-                </td>
-                <td>
-                    {{item.guardian}}
-                </td>
-                <td>
-                    {{item.hunter}}
-                </td>
-                <td>
-                    {{item.assassin}}
-                </td>
-                <td>
-                    {{item.warrior}}
-                </td>
+                     
             </tr>
             {% endfor %}
 
@@ -161,23 +133,9 @@
                     {{item.name}}
                 </td>
                 <td>
-                    {{item.image}}
+                    <img src="/static/images/Items/T3/{{item.image}}">
                 </td>
-                <td>
-                    {{item.mage}}
-                </td>
-                <td>
-                    {{item.guardian}}
-                </td>
-                <td>
-                    {{item.hunter}}
-                </td>
-                <td>
-                    {{item.assassin}}
-                </td>
-                <td>
-                    {{item.warrior}}
-                </td>
+               
             </tr>
             {% endfor %}
         </tbody>        
