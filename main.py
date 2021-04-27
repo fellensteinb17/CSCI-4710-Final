@@ -133,7 +133,7 @@ def random():
     
     if request.form.get("role") == "1":
         if request.form.get("damage-type") == "1":
-            random_god = Gods.query.order_by(func.random()).limit(1)
+            random_god = Gods.query.filter_by().order_by(func.random()).limit(1)
 
         elif request.form.get("damage-type") == "2":
             random_god = Gods.query.filter_by(damage=' Magical').order_by(func.random()).limit(1)
@@ -151,6 +151,7 @@ def random():
     elif request.form.get("role") == "6":
         random_god = Gods.query.filter_by(role=' Warrior').order_by(func.random()).limit(1)
 
+    
     god_role = [y.role for y in random_god]
     items_needed = 6
     
