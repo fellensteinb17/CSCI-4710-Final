@@ -140,8 +140,27 @@
             {% endfor %}
         </tbody>        
     </table>
+    <table class="table" id="table_items">
+        <thead>
+            <tr>
+                <th> Relics </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in relics_data %}
+            <tr>
+                <td>
+                    {{item.name}}
+                </td>
+                <td>
+                    <img src="/static/images/Relics/{{item.image}}">
+                </td>
 
-    {% endblock %}
-    </body>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+       {% endblock %}
+</body>
 
 </html>

@@ -195,8 +195,8 @@ def random():
     elif god_role == [' Warrior']:
         items = Items.query.filter_by(warrior = 1).order_by(func.random()).limit(items_needed)
       
-
-    return render_template('home.html', smite_logo = smite_logo, data_god=random_god, column_html=Items.__table__.columns.keys(), data_items=items, data_boots=boots, data_starter=starter)
+    relics = Relics.query.filter_by().order_by(func.random()).limit(2)
+    return render_template('home.html', smite_logo = smite_logo, data_god=random_god, column_html=Items.__table__.columns.keys(), data_items=items, data_boots=boots, data_starter=starter,relics_data=relics)
 
 @app.route('/About')
 def about():
