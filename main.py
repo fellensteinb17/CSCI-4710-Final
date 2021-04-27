@@ -129,7 +129,7 @@ def index():
     #return render_template('home.html', smite_logo = smite_logo, column_gods=Gods.__table__.columns.keys(), data_gods= query_all_gods, column_relics=Relics.__table__.columns.keys(), data_relics= query_all_relics)
 
 @app.route('/random', methods=['GET','POST'])
-def random():
+def random_god():
     
     if request.form.get("role") == "1":
         if request.form.get("damage-type") == "1":
