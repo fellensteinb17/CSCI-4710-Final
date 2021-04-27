@@ -147,10 +147,20 @@ def random_god():
             
 
         elif request.form.get("damage-type") == "2":
-            random_god = Gods.query.filter_by(damage=' Magical').order_by(func.random()).limit(1)
+            rand_role = random.randint(1, 2)
+            if rand_role == 1:
+                random_god = Gods.query.filter_by(role=' Mage').order_by(func.random()).limit(1)
+            elif rand_role == 2:
+                random_god = Gods.query.filter_by(role=' Guardian').order_by(func.random()).limit(1)
 
         elif request.form.get("damage-type") == "3":
-            random_god = Gods.query.filter_by(damage=' Physical').order_by(func.random()).limit(1)
+            rand_role = random.randint(1, 3)
+            if rand_role == 1:
+                random_god = Gods.query.filter_by(role=' Hunter').order_by(func.random()).limit(1)
+            elif rand_role == 2:
+                random_god = Gods.query.filter_by(role=' Assassin').order_by(func.random()).limit(1)
+            elif rand_role == 3:
+                random_god = Gods.query.filter_by(role=' Warrior').order_by(func.random()).limit(1)
     elif request.form.get("role") == "2":
         random_god = Gods.query.filter_by(role=' Mage').order_by(func.random()).limit(1)
     elif request.form.get("role") == "3":
