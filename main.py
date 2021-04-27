@@ -6,7 +6,7 @@ import json
 import csv
 import pandas as pd
 import requests
-
+import random
 
 # get current app directory
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -133,7 +133,18 @@ def random():
     
     if request.form.get("role") == "1":
         if request.form.get("damage-type") == "1":
-            random_god = Gods.query.filter_by().order_by(func.random()).limit(1)
+            rand_role = random.randint(1, 5)
+            if rand_role == 1:
+                random_god = Gods.query.filter_by(role=' Mage').order_by(func.random()).limit(1)
+            elif rand_role == 2:
+                random_god = Gods.query.filter_by(role=' Guardian').order_by(func.random()).limit(1)
+            elif rand_role == 3:
+                random_god = Gods.query.filter_by(role=' Hunter').order_by(func.random()).limit(1)
+            elif rand_role == 4:
+                random_god = Gods.query.filter_by(role=' Assassin').order_by(func.random()).limit(1)
+            elif rand_role == 5:
+                random_god = Gods.query.filter_by(role=' Warrior').order_by(func.random()).limit(1)
+            
 
         elif request.form.get("damage-type") == "2":
             random_god = Gods.query.filter_by(damage=' Magical').order_by(func.random()).limit(1)
