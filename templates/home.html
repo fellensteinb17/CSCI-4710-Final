@@ -76,7 +76,7 @@
             {% for id in data_god %}
                 <tr>
                     <td>
-                        <img src="/static/images/Gods/{{id.image}}">
+                        <img src="/static/images/Gods/{{id.image}}"width="100"height="100">
                     </td>
                     <td>
                         {{id.name}}
@@ -114,22 +114,22 @@
         <tbody>
             {% for item in data_starter %}
             <tr>
-                <td>
+                <td style="text-align:center">
                     {{item.name}}
                 </td>
-                <td>
-                    <img src="/static/images/Items/starters/{{item.image}}">
+                <td style="text-align:center">
+                    <img src="/static/images/Items/starters/{{item.image}}"width="100"height="100">
                 </td>
 
             </tr>
             {% endfor %}
             {% for item in data_boots %}
             <tr>
-                <td>
+                <td style="text-align:center">
                     {{item.name}}
                 </td>
-                <td>
-                    <img src="/static/images/Items/boots/{{item.image}}">
+                <td style="text-align:center">
+                    <img src="/static/images/Items/boots/{{item.image}}"width="100"height="100">
                 </td>
 
             </tr>
@@ -137,18 +137,18 @@
 
             {% for item in data_items %}
             <tr>
-                <td>
+                <td style="text-align:center">
                     {{item.name}}
                 </td>
-                <td>
-                    <img src="/static/images/Items/T3/{{item.image}}">
+                <td style="text-align:center">
+                    <img src="/static/images/Items/T3/{{item.image}}"width="100"height="100">
                 </td>
 
             </tr>
             {% endfor %}
         </tbody>
     </table>
-    <table class="table" id="table_items" style="margin:auto">
+    <table class="table" id="table_items" style="margin:auto;">
         <!--<thead>
 
                <tr>
@@ -160,11 +160,11 @@
            <tbody>
                {% for item in relics_data %}
                <tr>
-                   <td>
+                   <td style="text-align:center">
                        {{item.name}}
                    </td>
-                   <td>
-                       <img src="/static/images/Relics/{{item.image}}">
+                   <td style="text-align:center">
+                       <img src="/static/images/Relics/{{item.image}}"width="100"height="100">
                    </td>
 
                </tr>
