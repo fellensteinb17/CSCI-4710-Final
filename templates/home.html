@@ -64,7 +64,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 
-    <table class="table" id="table_god" style="width:25%">
+    <table class="table" id="table_god" style="width:25%; margin:auto">
         <colgroup>
             <col span="1" style="width:5%">
             <col span="1" style="width:5%">
@@ -95,7 +95,7 @@
         </tbody>
     </table>
 
-   <table class="table" id="table_items">        
+   <table class="table" id="table_items" style="margin:auto">        
         <thead>
             <tr>
             {% for key in column_html %}
@@ -140,26 +140,28 @@
             {% endfor %}
         </tbody>        
     </table>
-    <table class="table" id="table_items">
-        <thead>
-            <tr>
-                <th> Relics </th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for item in relics_data %}
-            <tr>
-                <td>
-                    {{item.name}}
-                </td>
-                <td>
-                    <img src="/static/images/Relics/{{item.image}}">
-                </td>
-
-            </tr>
+   <table class="table" id="table_items" style="margin:auto">
+       <thead>
+           {% for item in relics_data %}
+           <tr>
+               <th> Relics </th>
+           </tr>
+       </thead>
             {% endfor %}
-        </tbody>
-    </table>
+       <tbody>
+           {% for item in relics_data %}
+           <tr>
+               <td>
+                   {{item.name}}
+               </td>
+               <td>
+                   <img src="/static/images/Relics/{{item.image}}">
+               </td>
+
+           </tr>
+           {% endfor %}
+       </tbody>
+   </table>
        {% endblock %}
 </body>
 
