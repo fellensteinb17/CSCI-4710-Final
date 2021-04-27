@@ -166,7 +166,8 @@ def random():
             boots = Boots.query.filter_by(assassin = 1).order_by(func.random()).limit(1)
         elif god_role == [' Warrior']:
             boots = Boots.query.filter_by(warrior = 1).order_by(func.random()).limit(1)
-
+    else:
+        boots = {}
     if god_role == [' Mage']:
         items = Items.query.filter_by(mage = 1).order_by(func.random()).limit(items_needed)
     elif god_role == [' Guardian']:
