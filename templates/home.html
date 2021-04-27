@@ -95,14 +95,22 @@
         </tbody>
     </table>
 
-   <table class="table" id="table_items" style="margin:auto">        
-        <thead>
-            <tr>
+    <table class="table" id="table_items" style="margin:auto">
+        <!-- <thead>
+        <tr>
             {% for key in column_html %}
-                <th>{{key}}</th>
+            <th>{{key}}</th>
             {% endfor %}
-          </tr>
-        </thead>
+        </tr>
+    </thead> -->
+        <colgroup>
+            <col span="1" style="width:10%">
+            <col span="1" style="width:10%">
+            <col span="1" style="width:10%">
+            <col span="1" style="width:10%">
+            <col span="1" style="width:10%">
+            <col span="1" style="width:10%">
+        </colgroup>
         <tbody>
             {% for item in data_starter %}
             <tr>
@@ -112,7 +120,7 @@
                 <td>
                     <img src="/static/images/Items/starters/{{item.image}}">
                 </td>
-                
+
             </tr>
             {% endfor %}
             {% for item in data_boots %}
@@ -123,7 +131,7 @@
                 <td>
                     <img src="/static/images/Items/boots/{{item.image}}">
                 </td>
-                     
+
             </tr>
             {% endfor %}
 
@@ -135,34 +143,35 @@
                 <td>
                     <img src="/static/images/Items/T3/{{item.image}}">
                 </td>
-               
+
             </tr>
             {% endfor %}
-        </tbody>        
+        </tbody>
     </table>
-   <table class="table" id="table_items" style="margin:auto">
-       <thead>
-           {% for item in relics_data %}
-           <tr>
-               <th> Relics </th>
-           </tr>
-       </thead>
-            {% endfor %}
-       <tbody>
-           {% for item in relics_data %}
-           <tr>
-               <td>
-                   {{item.name}}
-               </td>
-               <td>
-                   <img src="/static/images/Relics/{{item.image}}">
-               </td>
+    <table class="table" id="table_items" style="margin:auto">
+        <!--<thead>
 
-           </tr>
-           {% endfor %}
-       </tbody>
-   </table>
-       {% endblock %}
-</body>
+               <tr>
+                   {% for key in r_column_html %}
+                   <th>{{key}}</th>
+                   {% endfor %}
+               </tr>
+           </thead> -->
+           <tbody>
+               {% for item in relics_data %}
+               <tr>
+                   <td>
+                       {{item.name}}
+                   </td>
+                   <td>
+                       <img src="/static/images/Relics/{{item.image}}">
+                   </td>
 
-</html>
+               </tr>
+               {% endfor %}
+           </tbody>
+       </table>
+           {% endblock %}
+    </body>
+
+    </html>
